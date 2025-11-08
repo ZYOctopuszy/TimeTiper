@@ -1,5 +1,5 @@
-from datetime import datetime, timedelta
 import threading
+from datetime import datetime, timedelta
 from json import load, dump
 from os import path
 from os.path import split
@@ -220,7 +220,7 @@ class MainWindow(QWidget):
         :return: 无
         """
         if event.type() == QEvent.Type.WindowStateChange and (
-            self.windowState() == Qt.WindowState.WindowMinimized
+                self.windowState() == Qt.WindowState.WindowMinimized
         ):
             logger.debug("设置窗口最小化, 执行隐藏窗口")
             self.showNormal()
@@ -248,11 +248,11 @@ class MainWindow(QWidget):
         self.hide_tray = configure["hide_tray"] or self.default_config["hide_tray"]
         self.forKillExe = configure["forKillExe"] or self.default_config["forKillExe"]
         self.random_time = (
-            configure["random_time"] or self.default_config["random_time"]
+                configure["random_time"] or self.default_config["random_time"]
         )
         self.hold_time = configure["hold_time"] or self.default_config["hold_time"]
         self.forKillWindowTitle = (
-            configure["forKillWindowTitle"] or self.default_config["forKillWindowTitle"]
+                configure["forKillWindowTitle"] or self.default_config["forKillWindowTitle"]
         )
 
     def show_config(self):
@@ -567,9 +567,9 @@ class MyTray(QSystemTrayIcon):
         QApplication.processEvents()
         if reason == QSystemTrayIcon.ActivationReason.DoubleClick:
             if not self.connect_window.isVisible() and (
-                keyboard.is_pressed("shift")
-                and keyboard.is_pressed("esc")
-                or self.connect_window.hide_tray == 0
+                    keyboard.is_pressed("shift")
+                    and keyboard.is_pressed("esc")
+                    or self.connect_window.hide_tray == 0
             ):
                 # 显示设置窗口
                 logger.debug("显示设置窗口")
@@ -732,8 +732,8 @@ class MessageShower:
                     QApplication.processEvents()
                     current_time: bool = False
                     # 如果差大于0
-                    if difference >= timedelta() and difference <= timedelta(
-                        seconds=self.window.hold_time
+                    if timedelta() <= difference <= timedelta(
+                            seconds=self.window.hold_time
                     ):
                         # 如果差小于持续时间
                         current_time = True
@@ -746,6 +746,7 @@ class MessageShower:
                         self.window.ui.test_button.setText("执行中, 请稍候...")
                         logger.debug("执行清剿函数")
                         self.warning_action()
+                    sleep(1)
 
 
 class GetInput(QWidget):
@@ -904,6 +905,5 @@ class EditTitle(EditItem):
         self.setWindowTitle("修改待杀窗口标题")
         self.ui.get_exe_name.setPlaceholderText("请输入待杀窗口标题")
         self.window.ui.edit_title_button.clicked.connect(self.edit_item_function)
-
 
 # endregion
