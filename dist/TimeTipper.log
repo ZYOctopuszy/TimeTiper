@@ -1,178 +1,0 @@
-2025-11-01 10:21:41.067 | DEBUG    | classes:__init__:74 - 配置文件路径: D:\PythonProjects\TimeTiper\dist\clock.json
-2025-11-01 10:21:41.068 | DEBUG    | classes:__init__:75 - 配置文件路径: D:\PythonProjects\TimeTiper\dist\config.json
-2025-11-01 10:21:41.068 | DEBUG    | classes:set_picture_path:450 - 图片文件已加载: C:\Users\Z_Oct\AppData\Local\Temp\_MEI73642\icons\active.png
-2025-11-01 10:21:41.069 | DEBUG    | classes:set_picture_path:450 - 图片文件已加载: C:\Users\Z_Oct\AppData\Local\Temp\_MEI73642\icons\inactive.png
-2025-11-01 10:21:41.069 | DEBUG    | classes:set_picture_path:450 - 图片文件已加载: C:\Users\Z_Oct\AppData\Local\Temp\_MEI73642\icons\hide_tray.png
-2025-11-01 10:21:41.081 | DEBUG    | classes:change_tray_state:503 - 托盘图标未设置隐藏, 切换托盘图标图片
-2025-11-01 10:21:41.174 | DEBUG    | classes:main:83 - 下课时间配置: {'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '14:50': '下午第一节下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '12:00': '第一批午休辅导下课'}
-2025-11-01 10:21:41.175 | DEBUG    | classes:main:93 - 导入成功
-2025-11-01 10:21:41.175 | DEBUG    | classes:show_config:187 - 当前托盘图标透明: False;
-            当前待杀程序: ['EXCEL.EXE', 'EasiCamera.exe', 'POWERPNT.EXE', 'WINWORD.EXE', 'et.exe', 'wps.exe', 'wpscloudsvr.exe'];
-            当前随机时间: [0, 30];
-            当前持续时间: 0;
-            当前待杀应用窗口标题: ['.pdf', '.ppt', '.pptx', '分享的图片'];
-2025-11-01 10:21:41.175 | DEBUG    | classes:main:131 - 已添加时间点: -07:50-
-2025-11-01 10:21:41.176 | DEBUG    | classes:main:131 - 已添加时间点: -08:40-
-2025-11-01 10:21:41.176 | DEBUG    | classes:main:131 - 已添加时间点: -09:35-
-2025-11-01 10:21:41.176 | DEBUG    | classes:main:131 - 已添加时间点: -10:45-
-2025-11-01 10:21:41.176 | DEBUG    | classes:main:131 - 已添加时间点: -12:00-
-2025-11-01 10:21:41.176 | DEBUG    | classes:main:131 - 已添加时间点: -14:50-
-2025-11-01 10:21:41.176 | DEBUG    | classes:main:131 - 已添加时间点: -15:45-
-2025-11-01 10:21:41.176 | DEBUG    | classes:main:131 - 已添加时间点: -16:40-
-2025-11-01 10:21:41.176 | DEBUG    | classes:main:131 - 已添加时间点: -17:35-
-2025-11-01 10:21:41.176 | DEBUG    | classes:main:131 - 已添加时间点: -21:30-
-2025-11-01 10:21:41.176 | DEBUG    | classes:main:137 - 已加载待杀程序列表
-2025-11-01 10:21:41.176 | DEBUG    | classes:change_tray_state:503 - 托盘图标未设置隐藏, 切换托盘图标图片
-2025-11-01 10:21:50.335 | DEBUG    | classes:change_state:522 - 当前启用状态: False
-2025-11-01 10:21:50.336 | DEBUG    | classes:change_tray_state:503 - 托盘图标未设置隐藏, 切换托盘图标图片
-2025-11-01 10:21:50.399 | DEBUG    | classes:change_state:522 - 当前启用状态: True
-2025-11-01 10:21:50.399 | DEBUG    | classes:change_tray_state:503 - 托盘图标未设置隐藏, 切换托盘图标图片
-2025-11-01 10:21:50.405 | DEBUG    | classes:toggle_window:474 - 显示设置窗口
-2025-11-01 10:21:53.510 | DEBUG    | classes:quit_app:228 - 当前软件生命状态: False
-2025-11-01 10:21:53.522 | DEBUG    | classes:changeEvent:152 - 设置窗口最小化, 执行隐藏窗口
-2025-11-07 20:14:36.672 | DEBUG    | classes:__init__:95 - 配置文件路径: D:\PythonProjects\TimeTiper\dist\clock.json
-2025-11-07 20:14:36.673 | DEBUG    | classes:__init__:96 - 配置文件路径: D:\PythonProjects\TimeTiper\dist\config.json
-2025-11-07 20:14:36.768 | DEBUG    | classes:__init__:111 - 下课时间配置: {'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '14:50': '下午第一节下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '19:50': '晚修第一节下课', '12:35': '第一批吃饭', '11:40': '第四节课下课', '20:40': '晚修第二节下课'}
-2025-11-07 20:14:36.770 | DEBUG    | classes:__init__:121 - 导入成功
-2025-11-07 20:14:36.770 | DEBUG    | classes:show_config:268 - 当前托盘图标透明: 1;
-            当前待杀程序: ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'];
-            当前随机时间: [90, 120];
-            当前持续时间: 180;
-            当前待杀应用窗口标题: ['.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'];
-2025-11-07 20:14:36.771 | DEBUG    | classes:__init__:170 - 已添加时间点: -07:50-
-2025-11-07 20:14:36.771 | DEBUG    | classes:__init__:170 - 已添加时间点: -08:40-
-2025-11-07 20:14:36.772 | DEBUG    | classes:__init__:170 - 已添加时间点: -09:35-
-2025-11-07 20:14:36.773 | DEBUG    | classes:__init__:170 - 已添加时间点: -10:45-
-2025-11-07 20:14:36.773 | DEBUG    | classes:__init__:170 - 已添加时间点: -11:40-
-2025-11-07 20:14:36.773 | DEBUG    | classes:__init__:170 - 已添加时间点: -12:35-
-2025-11-07 20:14:36.773 | DEBUG    | classes:__init__:170 - 已添加时间点: -14:50-
-2025-11-07 20:14:36.773 | DEBUG    | classes:__init__:170 - 已添加时间点: -15:45-
-2025-11-07 20:14:36.774 | DEBUG    | classes:__init__:170 - 已添加时间点: -16:40-
-2025-11-07 20:14:36.774 | DEBUG    | classes:__init__:170 - 已添加时间点: -17:35-
-2025-11-07 20:14:36.774 | DEBUG    | classes:__init__:170 - 已添加时间点: -19:50-
-2025-11-07 20:14:36.774 | DEBUG    | classes:__init__:170 - 已添加时间点: -20:40-
-2025-11-07 20:14:36.775 | DEBUG    | classes:__init__:170 - 已添加时间点: -21:30-
-2025-11-07 20:14:36.776 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: D:\PythonProjects\TimeTiper\dist\icons\active.png
-2025-11-07 20:14:36.777 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: D:\PythonProjects\TimeTiper\dist\icons\inactive.png
-2025-11-07 20:14:36.777 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: D:\PythonProjects\TimeTiper\dist\icons\hide_tray.png
-2025-11-07 20:14:36.895 | DEBUG    | classes:__init__:197 - 已加载待杀程序列表
-2025-11-07 20:25:16.709 | DEBUG    | classes:__init__:95 - 配置文件路径: D:\PythonProjects\TimeTiper\dist\clock.json
-2025-11-07 20:25:16.709 | DEBUG    | classes:__init__:96 - 配置文件路径: D:\PythonProjects\TimeTiper\dist\config.json
-2025-11-07 20:25:16.793 | DEBUG    | classes:__init__:111 - 下课时间配置: {'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '14:50': '下午第一节下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '19:50': '晚修第一节下课', '12:35': '第一批吃饭', '11:40': '第四节课下课', '20:40': '晚修第二节下课'}
-2025-11-07 20:25:16.795 | DEBUG    | classes:__init__:121 - 导入成功
-2025-11-07 20:25:16.795 | DEBUG    | classes:show_config:268 - 当前托盘图标透明: 1;
-            当前待杀程序: ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'];
-            当前随机时间: [90, 120];
-            当前持续时间: 180;
-            当前待杀应用窗口标题: ['.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'];
-2025-11-07 20:25:16.796 | DEBUG    | classes:__init__:170 - 已添加时间点: -07:50-
-2025-11-07 20:25:16.797 | DEBUG    | classes:__init__:170 - 已添加时间点: -08:40-
-2025-11-07 20:25:16.797 | DEBUG    | classes:__init__:170 - 已添加时间点: -09:35-
-2025-11-07 20:25:16.797 | DEBUG    | classes:__init__:170 - 已添加时间点: -10:45-
-2025-11-07 20:25:16.797 | DEBUG    | classes:__init__:170 - 已添加时间点: -11:40-
-2025-11-07 20:25:16.798 | DEBUG    | classes:__init__:170 - 已添加时间点: -12:35-
-2025-11-07 20:25:16.798 | DEBUG    | classes:__init__:170 - 已添加时间点: -14:50-
-2025-11-07 20:25:16.798 | DEBUG    | classes:__init__:170 - 已添加时间点: -15:45-
-2025-11-07 20:25:16.798 | DEBUG    | classes:__init__:170 - 已添加时间点: -16:40-
-2025-11-07 20:25:16.798 | DEBUG    | classes:__init__:170 - 已添加时间点: -17:35-
-2025-11-07 20:25:16.799 | DEBUG    | classes:__init__:170 - 已添加时间点: -19:50-
-2025-11-07 20:25:16.799 | DEBUG    | classes:__init__:170 - 已添加时间点: -20:40-
-2025-11-07 20:25:16.799 | DEBUG    | classes:__init__:170 - 已添加时间点: -21:30-
-2025-11-07 20:25:16.800 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: D:\PythonProjects\TimeTiper\dist\icons\active.png
-2025-11-07 20:25:16.800 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: D:\PythonProjects\TimeTiper\dist\icons\inactive.png
-2025-11-07 20:25:16.800 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: D:\PythonProjects\TimeTiper\dist\icons\hide_tray.png
-2025-11-07 20:25:16.911 | DEBUG    | classes:__init__:197 - 已加载待杀程序列表
-2025-11-07 20:25:58.247 | DEBUG    | classes:__init__:95 - 配置文件路径: D:\PythonProjects\TimeTiper\dist\clock.json
-2025-11-07 20:25:58.247 | DEBUG    | classes:__init__:96 - 配置文件路径: D:\PythonProjects\TimeTiper\dist\config.json
-2025-11-07 20:25:58.338 | DEBUG    | classes:__init__:111 - 下课时间配置: {'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '14:50': '下午第一节下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '19:50': '晚修第一节下课', '12:35': '第一批吃饭', '11:40': '第四节课下课', '20:40': '晚修第二节下课'}
-2025-11-07 20:25:58.339 | DEBUG    | classes:__init__:121 - 导入成功
-2025-11-07 20:25:58.339 | DEBUG    | classes:show_config:268 - 当前托盘图标透明: 2;
-            当前待杀程序: ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'];
-            当前随机时间: [90, 120];
-            当前持续时间: 180;
-            当前待杀应用窗口标题: ['.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'];
-2025-11-07 20:25:58.340 | DEBUG    | classes:__init__:170 - 已添加时间点: -07:50-
-2025-11-07 20:25:58.340 | DEBUG    | classes:__init__:170 - 已添加时间点: -08:40-
-2025-11-07 20:25:58.341 | DEBUG    | classes:__init__:170 - 已添加时间点: -09:35-
-2025-11-07 20:25:58.341 | DEBUG    | classes:__init__:170 - 已添加时间点: -10:45-
-2025-11-07 20:25:58.341 | DEBUG    | classes:__init__:170 - 已添加时间点: -11:40-
-2025-11-07 20:25:58.341 | DEBUG    | classes:__init__:170 - 已添加时间点: -12:35-
-2025-11-07 20:25:58.342 | DEBUG    | classes:__init__:170 - 已添加时间点: -14:50-
-2025-11-07 20:25:58.342 | DEBUG    | classes:__init__:170 - 已添加时间点: -15:45-
-2025-11-07 20:25:58.342 | DEBUG    | classes:__init__:170 - 已添加时间点: -16:40-
-2025-11-07 20:25:58.342 | DEBUG    | classes:__init__:170 - 已添加时间点: -17:35-
-2025-11-07 20:25:58.342 | DEBUG    | classes:__init__:170 - 已添加时间点: -19:50-
-2025-11-07 20:25:58.343 | DEBUG    | classes:__init__:170 - 已添加时间点: -20:40-
-2025-11-07 20:25:58.343 | DEBUG    | classes:__init__:170 - 已添加时间点: -21:30-
-2025-11-07 20:25:58.344 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: D:\PythonProjects\TimeTiper\dist\icons\active.png
-2025-11-07 20:25:58.344 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: D:\PythonProjects\TimeTiper\dist\icons\inactive.png
-2025-11-07 20:25:58.344 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: D:\PythonProjects\TimeTiper\dist\icons\hide_tray.png
-2025-11-07 20:25:58.409 | DEBUG    | classes:__init__:197 - 已加载待杀程序列表
-2025-11-07 20:26:18.118 | DEBUG    | classes:quit_app:319 - 当前软件生命状态: False
-2025-11-07 20:26:18.130 | DEBUG    | classes:changeEvent:229 - 设置窗口最小化, 执行隐藏窗口
-2025-11-07 20:33:06.091 | DEBUG    | classes:__init__:95 - 配置文件路径: D:\PythonProjects\TimeTiper\dist\clock.json
-2025-11-07 20:33:06.092 | DEBUG    | classes:__init__:96 - 配置文件路径: D:\PythonProjects\TimeTiper\dist\config.json
-2025-11-07 20:33:06.191 | DEBUG    | classes:__init__:111 - 下课时间配置: {'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '14:50': '下午第一节下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '19:50': '晚修第一节下课', '12:35': '第一批吃饭', '11:40': '第四节课下课', '20:40': '晚修第二节下课'}
-2025-11-07 20:33:06.192 | DEBUG    | classes:__init__:121 - 导入成功
-2025-11-07 20:33:06.192 | DEBUG    | classes:show_config:268 - 当前托盘图标透明: 2;
-            当前待杀程序: ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'];
-            当前随机时间: [90, 120];
-            当前持续时间: 180;
-            当前待杀应用窗口标题: ['.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'];
-2025-11-07 20:33:06.193 | DEBUG    | classes:__init__:170 - 已添加时间点: -07:50-
-2025-11-07 20:33:06.193 | DEBUG    | classes:__init__:170 - 已添加时间点: -08:40-
-2025-11-07 20:33:06.194 | DEBUG    | classes:__init__:170 - 已添加时间点: -09:35-
-2025-11-07 20:33:06.194 | DEBUG    | classes:__init__:170 - 已添加时间点: -10:45-
-2025-11-07 20:33:06.194 | DEBUG    | classes:__init__:170 - 已添加时间点: -11:40-
-2025-11-07 20:33:06.195 | DEBUG    | classes:__init__:170 - 已添加时间点: -12:35-
-2025-11-07 20:33:06.195 | DEBUG    | classes:__init__:170 - 已添加时间点: -14:50-
-2025-11-07 20:33:06.195 | DEBUG    | classes:__init__:170 - 已添加时间点: -15:45-
-2025-11-07 20:33:06.195 | DEBUG    | classes:__init__:170 - 已添加时间点: -16:40-
-2025-11-07 20:33:06.196 | DEBUG    | classes:__init__:170 - 已添加时间点: -17:35-
-2025-11-07 20:33:06.196 | DEBUG    | classes:__init__:170 - 已添加时间点: -19:50-
-2025-11-07 20:33:06.196 | DEBUG    | classes:__init__:170 - 已添加时间点: -20:40-
-2025-11-07 20:33:06.196 | DEBUG    | classes:__init__:170 - 已添加时间点: -21:30-
-2025-11-07 20:33:06.197 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: D:\PythonProjects\TimeTiper\dist\icons\active.png
-2025-11-07 20:33:06.197 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: D:\PythonProjects\TimeTiper\dist\icons\inactive.png
-2025-11-07 20:33:06.198 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: D:\PythonProjects\TimeTiper\dist\icons\hide_tray.png
-2025-11-07 20:33:06.217 | DEBUG    | classes:__init__:197 - 已加载待杀程序列表
-2025-11-07 20:36:06.248 | DEBUG    | classes:flash_state_changed:351 - {'hide_tray': 1, 'forKillExe': ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'], 'forKillWindowTitle': ['.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'], 'random_time': [90, 120], 'hold_time': 180}
-2025-11-07 20:36:06.250 | DEBUG    | classes:show_config:268 - 当前托盘图标透明: 1;
-            当前待杀程序: ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'];
-            当前随机时间: [90, 120];
-            当前持续时间: 180;
-            当前待杀应用窗口标题: ['.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'];
-2025-11-07 20:36:10.391 | DEBUG    | classes:flash_state_changed:351 - {'hide_tray': 2, 'forKillExe': ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'], 'forKillWindowTitle': ['.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'], 'random_time': [90, 120], 'hold_time': 180}
-2025-11-07 20:36:10.393 | DEBUG    | classes:show_config:268 - 当前托盘图标透明: 2;
-            当前待杀程序: ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'];
-            当前随机时间: [90, 120];
-            当前持续时间: 180;
-            当前待杀应用窗口标题: ['.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'];
-2025-11-07 20:36:17.054 | DEBUG    | classes:quit_app:319 - 当前软件生命状态: False
-2025-11-07 20:36:17.064 | DEBUG    | classes:changeEvent:229 - 设置窗口最小化, 执行隐藏窗口
-2025-11-07 20:36:29.334 | DEBUG    | classes:__init__:95 - 配置文件路径: D:\PythonProjects\TimeTiper\dist\clock.json
-2025-11-07 20:36:29.334 | DEBUG    | classes:__init__:96 - 配置文件路径: D:\PythonProjects\TimeTiper\dist\config.json
-2025-11-07 20:36:29.430 | DEBUG    | classes:__init__:111 - 下课时间配置: {'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '14:50': '下午第一节下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '19:50': '晚修第一节下课', '12:35': '第一批吃饭', '11:40': '第四节课下课', '20:40': '晚修第二节下课'}
-2025-11-07 20:36:29.430 | DEBUG    | classes:__init__:121 - 导入成功
-2025-11-07 20:36:29.431 | DEBUG    | classes:show_config:268 - 当前托盘图标透明: 2;
-            当前待杀程序: ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'];
-            当前随机时间: [90, 120];
-            当前持续时间: 180;
-            当前待杀应用窗口标题: ['.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'];
-2025-11-07 20:36:29.432 | DEBUG    | classes:__init__:170 - 已添加时间点: -07:50-
-2025-11-07 20:36:29.432 | DEBUG    | classes:__init__:170 - 已添加时间点: -08:40-
-2025-11-07 20:36:29.432 | DEBUG    | classes:__init__:170 - 已添加时间点: -09:35-
-2025-11-07 20:36:29.432 | DEBUG    | classes:__init__:170 - 已添加时间点: -10:45-
-2025-11-07 20:36:29.433 | DEBUG    | classes:__init__:170 - 已添加时间点: -11:40-
-2025-11-07 20:36:29.433 | DEBUG    | classes:__init__:170 - 已添加时间点: -12:35-
-2025-11-07 20:36:29.433 | DEBUG    | classes:__init__:170 - 已添加时间点: -14:50-
-2025-11-07 20:36:29.433 | DEBUG    | classes:__init__:170 - 已添加时间点: -15:45-
-2025-11-07 20:36:29.433 | DEBUG    | classes:__init__:170 - 已添加时间点: -16:40-
-2025-11-07 20:36:29.434 | DEBUG    | classes:__init__:170 - 已添加时间点: -17:35-
-2025-11-07 20:36:29.434 | DEBUG    | classes:__init__:170 - 已添加时间点: -19:50-
-2025-11-07 20:36:29.434 | DEBUG    | classes:__init__:170 - 已添加时间点: -20:40-
-2025-11-07 20:36:29.434 | DEBUG    | classes:__init__:170 - 已添加时间点: -21:30-
-2025-11-07 20:36:29.435 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: D:\PythonProjects\TimeTiper\dist\icons\active.png
-2025-11-07 20:36:29.436 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: D:\PythonProjects\TimeTiper\dist\icons\inactive.png
-2025-11-07 20:36:29.436 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: D:\PythonProjects\TimeTiper\dist\icons\hide_tray.png
-2025-11-07 20:36:29.695 | DEBUG    | classes:__init__:197 - 已加载待杀程序列表
