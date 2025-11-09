@@ -201,7 +201,7 @@ class MainWindow(QWidget):
         :return:
         """
         self.ui.if_tray_hide.setDisabled(self.ui.if_strong_hide.isChecked())
-        self.ui.if_tray_hide.setChecked(self.ui.if_strong_hide.isChecked())
+        self.ui.if_tray_hide.setChecked(True)
 
     def testing(self):
         self.test = True

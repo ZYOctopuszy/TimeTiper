@@ -318,12 +318,12 @@ class Ui_Form(object):
     # setupUi
 
     def retranslateUi(self, Form):
-        Form.setWindowTitle(QCoreApplication.translate("Form", u"TimeTipper", None))
+        Form.setWindowTitle(QCoreApplication.translate("Form", u"TimeTiper", None))
 #if QT_CONFIG(tooltip)
         self.apply_button.setToolTip(QCoreApplication.translate("Form", u"\u4e00\u4e9b\u8bbe\u7f6e\u66f4\u6539\u540e\u8981\u5e94\u7528\u624d\u4f1a\u4fdd\u5b58", None))
 #endif // QT_CONFIG(tooltip)
-        self.apply_button.setText(QCoreApplication.translate("Form", u"\u5e94\u7528(A)", None))
-        self.exit_button.setText(QCoreApplication.translate("Form", u"\u9000\u51fa", None))
+        self.apply_button.setText(QCoreApplication.translate("Form", u"\u5e94\u7528(Alt+A)", None))
+        self.exit_button.setText(QCoreApplication.translate("Form", u"\u9000\u51fa(Ctrl+Q)", None))
 #if QT_CONFIG(accessibility)
         self.times.setAccessibleName("")
 #endif // QT_CONFIG(accessibility)

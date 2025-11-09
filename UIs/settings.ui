@@ -36,14 +36,14 @@
       <string>一些设置更改后要应用才会保存</string>
      </property>
      <property name="text">
-      <string>应用(A)</string>
+      <string>应用(Alt+A)</string>
      </property>
     </widget>
    </item>
    <item row="1" column="0">
     <widget class="QPushButton" name="exit_button">
      <property name="text">
-      <string>退出</string>
+      <string>退出(Ctrl+Q)</string>
      </property>
     </widget>
    </item>
