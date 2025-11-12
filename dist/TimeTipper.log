@@ -1,242 +1,0 @@
-2025-11-09 12:32:00.344 | DEBUG    | classes:__init__:95 - 配置文件路径: D:\PythonProjects\TimeTipper\dist\clock.json
-2025-11-09 12:32:00.344 | DEBUG    | classes:__init__:96 - 配置文件路径: D:\PythonProjects\TimeTipper\dist\config.json
-2025-11-09 12:32:00.431 | DEBUG    | classes:__init__:112 - 下课时间配置: {'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '14:50': '下午第一节下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '19:50': '晚修第一节下课', '12:35': '第一批吃饭', '11:40': '第四节课下课', '20:40': '晚修第二节下课'}
-2025-11-09 12:32:00.432 | DEBUG    | classes:__init__:122 - 导入成功
-2025-11-09 12:32:00.432 | DEBUG    | classes:show_config:264 - 当前托盘图标透明(0显1透2隐): 2;
-            当前待杀程序: ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'];
-            当前随机时间: [90, 120];
-            当前持续时间: 180;
-            当前待杀应用窗口标题: ['.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'];
-2025-11-09 12:32:00.433 | DEBUG    | classes:__init__:168 - 已添加时间点: -07:50-
-2025-11-09 12:32:00.433 | DEBUG    | classes:__init__:168 - 已添加时间点: -08:40-
-2025-11-09 12:32:00.433 | DEBUG    | classes:__init__:168 - 已添加时间点: -09:35-
-2025-11-09 12:32:00.433 | DEBUG    | classes:__init__:168 - 已添加时间点: -10:45-
-2025-11-09 12:32:00.433 | DEBUG    | classes:__init__:168 - 已添加时间点: -11:40-
-2025-11-09 12:32:00.433 | DEBUG    | classes:__init__:168 - 已添加时间点: -12:35-
-2025-11-09 12:32:00.433 | DEBUG    | classes:__init__:168 - 已添加时间点: -14:50-
-2025-11-09 12:32:00.433 | DEBUG    | classes:__init__:168 - 已添加时间点: -15:45-
-2025-11-09 12:32:00.433 | DEBUG    | classes:__init__:168 - 已添加时间点: -16:40-
-2025-11-09 12:32:00.433 | DEBUG    | classes:__init__:168 - 已添加时间点: -17:35-
-2025-11-09 12:32:00.434 | DEBUG    | classes:__init__:168 - 已添加时间点: -19:50-
-2025-11-09 12:32:00.434 | DEBUG    | classes:__init__:168 - 已添加时间点: -20:40-
-2025-11-09 12:32:00.434 | DEBUG    | classes:__init__:168 - 已添加时间点: -21:30-
-2025-11-09 12:32:00.435 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: C:\Users\Z_Oct\AppData\Local\Temp\onefile_12232_134071363186704495\icons\active.png
-2025-11-09 12:32:00.435 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: C:\Users\Z_Oct\AppData\Local\Temp\onefile_12232_134071363186704495\icons\inactive.png
-2025-11-09 12:32:00.435 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: C:\Users\Z_Oct\AppData\Local\Temp\onefile_12232_134071363186704495\icons\hide_tray.png
-2025-11-09 12:32:00.435 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: C:\Users\Z_Oct\AppData\Local\Temp\onefile_12232_134071363186704495\icons\active.ico
-2025-11-09 12:32:00.470 | DEBUG    | classes:__init__:195 - 已加载待杀程序列表
-2025-11-09 12:32:21.180 | DEBUG    | classes:quit_app:315 - 当前软件生命状态: False
-2025-11-09 12:32:21.192 | DEBUG    | classes:changeEvent:225 - 设置窗口最小化, 执行隐藏窗口
-2025-11-09 12:41:22.478 | DEBUG    | classes:__init__:95 - 配置文件路径: D:\PythonProjects\TimeTipper\dist\clock.json
-2025-11-09 12:41:22.479 | DEBUG    | classes:__init__:96 - 配置文件路径: D:\PythonProjects\TimeTipper\dist\config.json
-2025-11-09 12:41:22.562 | DEBUG    | classes:__init__:112 - 下课时间配置: {'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '14:50': '下午第一节下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '19:50': '晚修第一节下课', '12:35': '第一批吃饭', '11:40': '第四节课下课', '20:40': '晚修第二节下课'}
-2025-11-09 12:41:22.563 | DEBUG    | classes:__init__:122 - 导入成功
-2025-11-09 12:41:22.563 | DEBUG    | classes:show_config:264 - 当前托盘图标透明(0显1透2隐): 2;
-            当前待杀程序: ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'];
-            当前随机时间: [90, 120];
-            当前持续时间: 180;
-            当前待杀应用窗口标题: ['.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'];
-2025-11-09 12:41:22.564 | DEBUG    | classes:__init__:168 - 已添加时间点: -07:50-
-2025-11-09 12:41:22.564 | DEBUG    | classes:__init__:168 - 已添加时间点: -08:40-
-2025-11-09 12:41:22.564 | DEBUG    | classes:__init__:168 - 已添加时间点: -09:35-
-2025-11-09 12:41:22.564 | DEBUG    | classes:__init__:168 - 已添加时间点: -10:45-
-2025-11-09 12:41:22.564 | DEBUG    | classes:__init__:168 - 已添加时间点: -11:40-
-2025-11-09 12:41:22.564 | DEBUG    | classes:__init__:168 - 已添加时间点: -12:35-
-2025-11-09 12:41:22.565 | DEBUG    | classes:__init__:168 - 已添加时间点: -14:50-
-2025-11-09 12:41:22.565 | DEBUG    | classes:__init__:168 - 已添加时间点: -15:45-
-2025-11-09 12:41:22.565 | DEBUG    | classes:__init__:168 - 已添加时间点: -16:40-
-2025-11-09 12:41:22.565 | DEBUG    | classes:__init__:168 - 已添加时间点: -17:35-
-2025-11-09 12:41:22.565 | DEBUG    | classes:__init__:168 - 已添加时间点: -19:50-
-2025-11-09 12:41:22.565 | DEBUG    | classes:__init__:168 - 已添加时间点: -20:40-
-2025-11-09 12:41:22.565 | DEBUG    | classes:__init__:168 - 已添加时间点: -21:30-
-2025-11-09 12:41:22.565 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: C:\Users\Z_Oct\AppData\Local\Temp\onefile_14272_134071368813738361\icons\active.png
-2025-11-09 12:41:22.566 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: C:\Users\Z_Oct\AppData\Local\Temp\onefile_14272_134071368813738361\icons\inactive.png
-2025-11-09 12:41:22.566 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: C:\Users\Z_Oct\AppData\Local\Temp\onefile_14272_134071368813738361\icons\hide_tray.png
-2025-11-09 12:41:22.566 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: C:\Users\Z_Oct\AppData\Local\Temp\onefile_14272_134071368813738361\icons\active.ico
-2025-11-09 12:41:23.018 | DEBUG    | classes:__init__:195 - 已加载待杀程序列表
-2025-11-09 12:41:40.885 | DEBUG    | classes:flash_state_changed:351 - {'hide_tray': 2, 'forKillExe': ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'], 'forKillWindowTitle': ['.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'], 'random_time': [90, 120], 'hold_time': 180}
-2025-11-09 12:41:40.886 | DEBUG    | classes:show_config:264 - 当前托盘图标透明(0显1透2隐): 2;
-            当前待杀程序: ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'];
-            当前随机时间: [90, 120];
-            当前持续时间: 180;
-            当前待杀应用窗口标题: ['.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'];
-2025-11-09 12:41:55.276 | DEBUG    | classes:quit_app:315 - 当前软件生命状态: False
-2025-11-09 12:41:55.288 | DEBUG    | classes:changeEvent:225 - 设置窗口最小化, 执行隐藏窗口
-2025-11-09 12:43:14.089 | DEBUG    | classes:__init__:95 - 配置文件路径: D:\PythonProjects\TimeTipper\dist\clock.json
-2025-11-09 12:43:14.089 | DEBUG    | classes:__init__:96 - 配置文件路径: D:\PythonProjects\TimeTipper\dist\config.json
-2025-11-09 12:43:14.185 | DEBUG    | classes:__init__:112 - 下课时间配置: {'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '14:50': '下午第一节下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '19:50': '晚修第一节下课', '12:35': '第一批吃饭', '11:40': '第四节课下课', '20:40': '晚修第二节下课'}
-2025-11-09 12:43:14.187 | DEBUG    | classes:__init__:122 - 导入成功
-2025-11-09 12:43:14.187 | DEBUG    | classes:show_config:264 - 当前托盘图标透明(0显1透2隐): 2;
-            当前待杀程序: ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'];
-            当前随机时间: [90, 120];
-            当前持续时间: 180;
-            当前待杀应用窗口标题: ['.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'];
-2025-11-09 12:43:14.187 | DEBUG    | classes:__init__:168 - 已添加时间点: -07:50-
-2025-11-09 12:43:14.188 | DEBUG    | classes:__init__:168 - 已添加时间点: -08:40-
-2025-11-09 12:43:14.188 | DEBUG    | classes:__init__:168 - 已添加时间点: -09:35-
-2025-11-09 12:43:14.188 | DEBUG    | classes:__init__:168 - 已添加时间点: -10:45-
-2025-11-09 12:43:14.188 | DEBUG    | classes:__init__:168 - 已添加时间点: -11:40-
-2025-11-09 12:43:14.188 | DEBUG    | classes:__init__:168 - 已添加时间点: -12:35-
-2025-11-09 12:43:14.188 | DEBUG    | classes:__init__:168 - 已添加时间点: -14:50-
-2025-11-09 12:43:14.188 | DEBUG    | classes:__init__:168 - 已添加时间点: -15:45-
-2025-11-09 12:43:14.189 | DEBUG    | classes:__init__:168 - 已添加时间点: -16:40-
-2025-11-09 12:43:14.189 | DEBUG    | classes:__init__:168 - 已添加时间点: -17:35-
-2025-11-09 12:43:14.189 | DEBUG    | classes:__init__:168 - 已添加时间点: -19:50-
-2025-11-09 12:43:14.189 | DEBUG    | classes:__init__:168 - 已添加时间点: -20:40-
-2025-11-09 12:43:14.189 | DEBUG    | classes:__init__:168 - 已添加时间点: -21:30-
-2025-11-09 12:43:14.190 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: C:\Users\Z_Oct\AppData\Local\Temp\onefile_7368_134071369932132048\icons\active.png
-2025-11-09 12:43:14.190 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: C:\Users\Z_Oct\AppData\Local\Temp\onefile_7368_134071369932132048\icons\inactive.png
-2025-11-09 12:43:14.190 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: C:\Users\Z_Oct\AppData\Local\Temp\onefile_7368_134071369932132048\icons\hide_tray.png
-2025-11-09 12:43:14.190 | DEBUG    | classes:set_picture_path:553 - 图片文件已加载: C:\Users\Z_Oct\AppData\Local\Temp\onefile_7368_134071369932132048\icons\active.ico
-2025-11-09 12:43:14.217 | DEBUG    | classes:__init__:195 - 已加载待杀程序列表
-2025-11-09 12:43:26.797 | DEBUG    | classes:flash_state_changed:351 - {'hide_tray': 0, 'forKillExe': ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'], 'forKillWindowTitle': ['.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'], 'random_time': [90, 120], 'hold_time': 180}
-2025-11-09 12:43:26.798 | DEBUG    | classes:show_config:264 - 当前托盘图标透明(0显1透2隐): 0;
-            当前待杀程序: ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'];
-            当前随机时间: [90, 120];
-            当前持续时间: 180;
-            当前待杀应用窗口标题: ['.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'];
-2025-11-09 12:43:26.808 | DEBUG    | classes:change_tray_state:605 - 托盘图标未设置隐藏, 切换托盘图标图片
-2025-11-09 12:43:29.128 | DEBUG    | classes:flash_description:449 - 当前选中: 08:40, 序号: 1
-2025-11-09 12:43:29.133 | DEBUG    | classes:edit_description:462 - 已刷新时间表配置, 当前配置:{'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '14:50': '下午第一节下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '19:50': '晚修第一节下课', '12:35': '第一批吃饭', '11:40': '第四节课下课', '20:40': '晚修第二节下课'}
-2025-11-09 12:43:29.566 | DEBUG    | classes:flash_description:449 - 当前选中: 07:50, 序号: 0
-2025-11-09 12:43:29.568 | DEBUG    | classes:edit_description:462 - 已刷新时间表配置, 当前配置:{'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '14:50': '下午第一节下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '19:50': '晚修第一节下课', '12:35': '第一批吃饭', '11:40': '第四节课下课', '20:40': '晚修第二节下课'}
-2025-11-09 12:43:30.941 | DEBUG    | classes:flash_description:449 - 当前选中: 08:40, 序号: 1
-2025-11-09 12:43:30.942 | DEBUG    | classes:edit_description:462 - 已刷新时间表配置, 当前配置:{'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '14:50': '下午第一节下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '19:50': '晚修第一节下课', '12:35': '第一批吃饭', '11:40': '第四节课下课', '20:40': '晚修第二节下课'}
-2025-11-09 12:43:31.605 | DEBUG    | classes:flash_description:449 - 当前选中: 09:35, 序号: 2
-2025-11-09 12:43:31.607 | DEBUG    | classes:edit_description:462 - 已刷新时间表配置, 当前配置:{'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '14:50': '下午第一节下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '19:50': '晚修第一节下课', '12:35': '第一批吃饭', '11:40': '第四节课下课', '20:40': '晚修第二节下课'}
-2025-11-09 12:43:32.069 | DEBUG    | classes:flash_description:449 - 当前选中: 10:45, 序号: 3
-2025-11-09 12:43:32.070 | DEBUG    | classes:edit_description:462 - 已刷新时间表配置, 当前配置:{'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '14:50': '下午第一节下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '19:50': '晚修第一节下课', '12:35': '第一批吃饭', '11:40': '第四节课下课', '20:40': '晚修第二节下课'}
-2025-11-09 12:43:32.445 | DEBUG    | classes:flash_description:449 - 当前选中: 11:40, 序号: 4
-2025-11-09 12:43:32.447 | DEBUG    | classes:edit_description:462 - 已刷新时间表配置, 当前配置:{'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '14:50': '下午第一节下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '19:50': '晚修第一节下课', '12:35': '第一批吃饭', '11:40': '第四节课下课', '20:40': '晚修第二节下课'}
-2025-11-09 12:43:40.330 | DEBUG    | classes:flash_description:449 - 当前选中: 11:40, 序号: 4
-2025-11-09 12:43:40.333 | DEBUG    | classes:edit_description:462 - 已刷新时间表配置, 当前配置:{'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '14:50': '下午第一节下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '19:50': '晚修第一节下课', '12:35': '第一批吃饭', '11:40': '第四节课下课', '20:40': '晚修第二节下课'}
-2025-11-09 12:43:41.070 | DEBUG    | classes:flash_description:449 - 当前选中: 00:00, 序号: 0
-2025-11-09 12:43:41.072 | DEBUG    | classes:edit_description:462 - 已刷新时间表配置, 当前配置:{'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '14:50': '下午第一节下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '19:50': '晚修第一节下课', '12:35': '第一批吃饭', '11:40': '第四节课下课', '20:40': '晚修第二节下课', '00:00': 'Default Description'}
-2025-11-09 12:43:42.165 | DEBUG    | classes:flash_description:449 - 当前选中: 07:50, 序号: 1
-2025-11-09 12:43:42.167 | DEBUG    | classes:edit_description:462 - 已刷新时间表配置, 当前配置:{'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '14:50': '下午第一节下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '19:50': '晚修第一节下课', '12:35': '第一批吃饭', '11:40': '第四节课下课', '20:40': '晚修第二节下课', '00:00': 'Default Description'}
-2025-11-09 12:43:42.167 | DEBUG    | classes:edit_description:462 - 已刷新时间表配置, 当前配置:{'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '14:50': '下午第一节下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '19:50': '晚修第一节下课', '12:35': '第一批吃饭', '11:40': '第四节课下课', '20:40': '晚修第二节下课'}
-2025-11-09 12:43:43.767 | DEBUG    | classes:flash_description:449 - 当前选中: 14:50, 序号: 6
-2025-11-09 12:43:43.769 | DEBUG    | classes:edit_description:462 - 已刷新时间表配置, 当前配置:{'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '14:50': '下午第一节下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '19:50': '晚修第一节下课', '12:35': '第一批吃饭', '11:40': '第四节课下课', '20:40': '晚修第二节下课'}
-2025-11-09 12:43:47.282 | DEBUG    | classes:edit_description:462 - 已刷新时间表配置, 当前配置:{'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '19:50': '晚修第一节下课', '12:35': '第一批吃饭', '11:40': '第四节课下课', '20:40': '晚修第二节下课', '14:50': '下午第一节下课'}
-2025-11-09 12:43:48.279 | DEBUG    | classes:flash_description:449 - 当前选中: 09:35, 序号: 2
-2025-11-09 12:43:48.280 | DEBUG    | classes:edit_description:462 - 已刷新时间表配置, 当前配置:{'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '19:50': '晚修第一节下课', '12:35': '第一批吃饭', '11:40': '第四节课下课', '20:40': '晚修第二节下课', '14:50': '下午第一节下课'}
-2025-11-09 12:43:49.150 | DEBUG    | classes:flash_description:449 - 当前选中: 08:40, 序号: 1
-2025-11-09 12:43:49.151 | DEBUG    | classes:edit_description:462 - 已刷新时间表配置, 当前配置:{'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '19:50': '晚修第一节下课', '12:35': '第一批吃饭', '11:40': '第四节课下课', '20:40': '晚修第二节下课', '14:50': '下午第一节下课'}
-2025-11-09 12:43:49.573 | DEBUG    | classes:flash_description:449 - 当前选中: 07:50, 序号: 0
-2025-11-09 12:43:49.574 | DEBUG    | classes:edit_description:462 - 已刷新时间表配置, 当前配置:{'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '19:50': '晚修第一节下课', '12:35': '第一批吃饭', '11:40': '第四节课下课', '20:40': '晚修第二节下课', '14:50': '下午第一节下课'}
-2025-11-09 12:43:50.239 | DEBUG    | classes:flash_description:449 - 当前选中: 21:30, 序号: 12
-2025-11-09 12:43:50.241 | DEBUG    | classes:edit_description:462 - 已刷新时间表配置, 当前配置:{'07:50': '早读下课', '08:40': '第一节课下课', '09:35': '第二节课下课', '10:45': '第三节课下课', '15:45': '下午第二节下课', '16:40': '下午第三节下课', '17:35': '下午第四节下课', '21:30': '晚修第三节下课', '19:50': '晚修第一节下课', '12:35': '第一批吃饭', '11:40': '第四节课下课', '20:40': '晚修第二节下课', '14:50': '下午第一节下课'}
-2025-11-09 12:43:55.232 | DEBUG    | classes:warn:747 - 执行清剿函数
-2025-11-09 12:43:55.232 | DEBUG    | classes:warning_action:695 - 将等待时间: 98秒
-2025-11-09 12:45:33.271 | DEBUG    | classes:warning_action:701 - 关闭窗口中
-2025-11-09 12:45:33.272 | DEBUG    | WindowCloser:callback:36 - 找到匹配窗口 - 句柄: 1246522, 标题: 管理员:  .pdf
-2025-11-09 12:45:33.298 | DEBUG    | classes:warning_action:706 - 杀死进程中
-2025-11-09 12:45:33.424 | DEBUG    | public_functions:kill_exe:63 - EasiCamera.exe未运行
-2025-11-09 12:45:33.488 | DEBUG    | public_functions:kill_exe:63 - et.exe未运行
-2025-11-09 12:45:33.549 | DEBUG    | public_functions:kill_exe:63 - EXCEL.EXE未运行
-2025-11-09 12:45:33.615 | DEBUG    | public_functions:kill_exe:63 - POWERPNT.EXE未运行
-2025-11-09 12:45:33.681 | DEBUG    | public_functions:kill_exe:63 - WINWORD.EXE未运行
-2025-11-09 12:45:33.745 | DEBUG    | public_functions:kill_exe:63 - wps.exe未运行
-2025-11-09 12:45:33.810 | DEBUG    | public_functions:kill_exe:63 - wpscloudsvr.exe未运行
-2025-11-09 12:47:04.628 | DEBUG    | classes:add_item_func:794 - 已手动添加项: .gsp
-2025-11-09 12:47:04.633 | DEBUG    | classes:flash_state_changed:351 - {'hide_tray': 0, 'forKillExe': ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'], 'forKillWindowTitle': ['.gsp', '.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'], 'random_time': [90, 120], 'hold_time': 180}
-2025-11-09 12:47:04.636 | DEBUG    | classes:show_config:264 - 当前托盘图标透明(0显1透2隐): 0;
-            当前待杀程序: ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'];
-            当前随机时间: [90, 120];
-            当前持续时间: 180;
-            当前待杀应用窗口标题: ['.gsp', '.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'];
-2025-11-09 12:47:04.636 | DEBUG    | classes:change_tray_state:605 - 托盘图标未设置隐藏, 切换托盘图标图片
-2025-11-09 12:47:09.853 | DEBUG    | classes:flash_state_changed:351 - {'hide_tray': 0, 'forKillExe': ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'], 'forKillWindowTitle': ['.gsp', '.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'], 'random_time': [0, 0], 'hold_time': 180}
-2025-11-09 12:47:09.871 | DEBUG    | classes:show_config:264 - 当前托盘图标透明(0显1透2隐): 0;
-            当前待杀程序: ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'];
-            当前随机时间: [0, 0];
-            当前持续时间: 180;
-            当前待杀应用窗口标题: ['.gsp', '.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'];
-2025-11-09 12:47:09.872 | DEBUG    | classes:change_tray_state:605 - 托盘图标未设置隐藏, 切换托盘图标图片
-2025-11-09 12:47:11.851 | DEBUG    | classes:warn:747 - 执行清剿函数
-2025-11-09 12:47:11.851 | DEBUG    | classes:warning_action:695 - 将等待时间: 0秒
-2025-11-09 12:47:11.851 | DEBUG    | classes:warning_action:701 - 关闭窗口中
-2025-11-09 12:47:11.855 | DEBUG    | WindowCloser:callback:36 - 找到匹配窗口 - 句柄: 20186712, 标题: 初二14班-张跃-用度量和计算工具验证勾股定理.gsp
-2025-11-09 12:47:11.869 | DEBUG    | classes:warning_action:706 - 杀死进程中
-2025-11-09 12:47:11.953 | DEBUG    | public_functions:kill_exe:63 - EasiCamera.exe未运行
-2025-11-09 12:47:12.025 | DEBUG    | public_functions:kill_exe:63 - et.exe未运行
-2025-11-09 12:47:12.095 | DEBUG    | public_functions:kill_exe:63 - EXCEL.EXE未运行
-2025-11-09 12:47:12.164 | DEBUG    | public_functions:kill_exe:63 - POWERPNT.EXE未运行
-2025-11-09 12:47:12.235 | DEBUG    | public_functions:kill_exe:63 - WINWORD.EXE未运行
-2025-11-09 12:47:12.304 | DEBUG    | public_functions:kill_exe:63 - wps.exe未运行
-2025-11-09 12:47:12.375 | DEBUG    | public_functions:kill_exe:63 - wpscloudsvr.exe未运行
-2025-11-09 12:47:17.378 | DEBUG    | classes:warn:747 - 执行清剿函数
-2025-11-09 12:47:17.378 | DEBUG    | classes:warning_action:695 - 将等待时间: 0秒
-2025-11-09 12:47:17.378 | DEBUG    | classes:warning_action:701 - 关闭窗口中
-2025-11-09 12:47:17.380 | DEBUG    | WindowCloser:callback:36 - 找到匹配窗口 - 句柄: 20186712, 标题: 初二14班-张跃-用度量和计算工具验证勾股定理.gsp
-2025-11-09 12:47:17.404 | DEBUG    | classes:warning_action:706 - 杀死进程中
-2025-11-09 12:47:17.489 | DEBUG    | public_functions:kill_exe:63 - EasiCamera.exe未运行
-2025-11-09 12:47:17.569 | DEBUG    | public_functions:kill_exe:63 - et.exe未运行
-2025-11-09 12:47:17.653 | DEBUG    | public_functions:kill_exe:63 - EXCEL.EXE未运行
-2025-11-09 12:47:17.728 | DEBUG    | public_functions:kill_exe:63 - POWERPNT.EXE未运行
-2025-11-09 12:47:17.808 | DEBUG    | public_functions:kill_exe:63 - WINWORD.EXE未运行
-2025-11-09 12:47:17.887 | DEBUG    | public_functions:kill_exe:63 - wps.exe未运行
-2025-11-09 12:47:17.967 | DEBUG    | public_functions:kill_exe:63 - wpscloudsvr.exe未运行
-2025-11-09 12:49:46.790 | DEBUG    | classes:flash_state_changed:351 - {'hide_tray': 1, 'forKillExe': ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'], 'forKillWindowTitle': ['.gsp', '.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'], 'random_time': [0, 0], 'hold_time': 180}
-2025-11-09 12:49:46.791 | DEBUG    | classes:show_config:264 - 当前托盘图标透明(0显1透2隐): 1;
-            当前待杀程序: ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'];
-            当前随机时间: [0, 0];
-            当前持续时间: 180;
-            当前待杀应用窗口标题: ['.gsp', '.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'];
-2025-11-09 12:49:56.928 | DEBUG    | classes:changeEvent:225 - 设置窗口最小化, 执行隐藏窗口
-2025-11-09 12:49:59.818 | DEBUG    | classes:toggle_window:575 - 显示设置窗口
-2025-11-09 12:50:02.517 | DEBUG    | classes:flash_state_changed:351 - {'hide_tray': 0, 'forKillExe': ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'], 'forKillWindowTitle': ['.gsp', '.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'], 'random_time': [0, 0], 'hold_time': 180}
-2025-11-09 12:50:02.518 | DEBUG    | classes:show_config:264 - 当前托盘图标透明(0显1透2隐): 0;
-            当前待杀程序: ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'];
-            当前随机时间: [0, 0];
-            当前持续时间: 180;
-            当前待杀应用窗口标题: ['.gsp', '.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'];
-2025-11-09 12:50:02.519 | DEBUG    | classes:change_tray_state:605 - 托盘图标未设置隐藏, 切换托盘图标图片
-2025-11-09 12:50:04.834 | DEBUG    | classes:changeEvent:225 - 设置窗口最小化, 执行隐藏窗口
-2025-11-09 12:50:05.438 | DEBUG    | classes:toggle_window:575 - 显示设置窗口
-2025-11-09 12:50:08.047 | DEBUG    | classes:flash_state_changed:351 - {'hide_tray': 1, 'forKillExe': ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'], 'forKillWindowTitle': ['.gsp', '.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'], 'random_time': [0, 0], 'hold_time': 180}
-2025-11-09 12:50:08.047 | DEBUG    | classes:show_config:264 - 当前托盘图标透明(0显1透2隐): 1;
-            当前待杀程序: ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'];
-            当前随机时间: [0, 0];
-            当前持续时间: 180;
-            当前待杀应用窗口标题: ['.gsp', '.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'];
-2025-11-09 12:50:09.688 | DEBUG    | classes:changeEvent:225 - 设置窗口最小化, 执行隐藏窗口
-2025-11-09 12:50:19.471 | DEBUG    | classes:changeEvent:225 - 设置窗口最小化, 执行隐藏窗口
-2025-11-09 12:50:22.583 | DEBUG    | classes:changeEvent:225 - 设置窗口最小化, 执行隐藏窗口
-2025-11-09 12:50:37.045 | DEBUG    | classes:flash_state_changed:351 - {'hide_tray': 2, 'forKillExe': ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'], 'forKillWindowTitle': ['.gsp', '.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'], 'random_time': [0, 0], 'hold_time': 180}
-2025-11-09 12:50:37.046 | DEBUG    | classes:show_config:264 - 当前托盘图标透明(0显1透2隐): 2;
-            当前待杀程序: ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'];
-            当前随机时间: [0, 0];
-            当前持续时间: 180;
-            当前待杀应用窗口标题: ['.gsp', '.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'];
-2025-11-09 12:50:51.336 | DEBUG    | classes:changeEvent:225 - 设置窗口最小化, 执行隐藏窗口
-2025-11-09 12:51:29.814 | DEBUG    | classes:flash_state_changed:351 - {'hide_tray': 1, 'forKillExe': ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'], 'forKillWindowTitle': ['.gsp', '.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'], 'random_time': [0, 0], 'hold_time': 180}
-2025-11-09 12:51:29.814 | DEBUG    | classes:show_config:264 - 当前托盘图标透明(0显1透2隐): 1;
-            当前待杀程序: ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'];
-            当前随机时间: [0, 0];
-            当前持续时间: 180;
-            当前待杀应用窗口标题: ['.gsp', '.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'];
-2025-11-09 12:51:32.520 | DEBUG    | classes:changeEvent:225 - 设置窗口最小化, 执行隐藏窗口
-2025-11-09 12:51:46.950 | DEBUG    | classes:changeEvent:225 - 设置窗口最小化, 执行隐藏窗口
-2025-11-09 12:52:04.330 | DEBUG    | classes:toggle_window:575 - 显示设置窗口
-2025-11-09 12:52:08.436 | DEBUG    | classes:changeEvent:225 - 设置窗口最小化, 执行隐藏窗口
-2025-11-09 12:52:50.626 | DEBUG    | classes:toggle_window:575 - 显示设置窗口
-2025-11-09 12:53:03.873 | DEBUG    | classes:changeEvent:225 - 设置窗口最小化, 执行隐藏窗口
-2025-11-09 12:53:04.294 | DEBUG    | classes:toggle_window:575 - 显示设置窗口
-2025-11-09 12:53:04.642 | DEBUG    | classes:changeEvent:225 - 设置窗口最小化, 执行隐藏窗口
-2025-11-09 12:53:05.008 | DEBUG    | classes:toggle_window:575 - 显示设置窗口
-2025-11-09 12:53:05.376 | DEBUG    | classes:changeEvent:225 - 设置窗口最小化, 执行隐藏窗口
-2025-11-09 12:53:05.806 | DEBUG    | classes:toggle_window:575 - 显示设置窗口
-2025-11-09 12:53:06.641 | DEBUG    | classes:changeEvent:225 - 设置窗口最小化, 执行隐藏窗口
-2025-11-09 12:53:07.071 | DEBUG    | classes:toggle_window:575 - 显示设置窗口
-2025-11-09 12:53:08.681 | DEBUG    | classes:changeEvent:225 - 设置窗口最小化, 执行隐藏窗口
-2025-11-09 12:53:26.010 | DEBUG    | classes:toggle_window:575 - 显示设置窗口
-2025-11-09 12:53:32.542 | DEBUG    | classes:flash_state_changed:351 - {'hide_tray': 0, 'forKillExe': ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'], 'forKillWindowTitle': ['.gsp', '.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'], 'random_time': [0, 0], 'hold_time': 180}
-2025-11-09 12:53:32.542 | DEBUG    | classes:show_config:264 - 当前托盘图标透明(0显1透2隐): 0;
-            当前待杀程序: ['EasiCamera.exe', 'et.exe', 'EXCEL.EXE', 'POWERPNT.EXE', 'WINWORD.EXE', 'wps.exe', 'wpscloudsvr.exe'];
-            当前随机时间: [0, 0];
-            当前持续时间: 180;
-            当前待杀应用窗口标题: ['.gsp', '.pdf', '.ppt', '.pptx', '.xlsx', '192.168.', '分享的图片', '聊天记录', '文档文件'];
-2025-11-09 12:53:32.543 | DEBUG    | classes:change_tray_state:605 - 托盘图标未设置隐藏, 切换托盘图标图片
-2025-11-09 12:53:39.301 | DEBUG    | classes:quit_app:315 - 当前软件生命状态: False
-2025-11-09 12:53:39.316 | DEBUG    | classes:changeEvent:225 - 设置窗口最小化, 执行隐藏窗口
