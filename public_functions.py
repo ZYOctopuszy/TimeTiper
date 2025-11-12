@@ -93,7 +93,7 @@ def connect_signals(widgets: list, func):
     :param func: 要连接的函数
     :return:
     """
-    [
+    return [
         (
             widget.stateChanged.connect(func)
             if type(widget) == QCheckBox

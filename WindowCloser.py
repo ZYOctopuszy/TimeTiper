@@ -16,8 +16,7 @@ class WindowCloser:
         :param title: 窗口标题
         """
         win32gui.EnumWindows(self.callback, title)
-        for hwnd in self.hwnd_list:
-            win32gui.PostMessage(hwnd, win32con.WM_CLOSE)
+        [win32gui.PostMessage(hwnd, win32con.WM_CLOSE) for hwnd in self.hwnd_list]
         self.hwnd_list.clear()
 
     def callback(self, hwnd, extra):

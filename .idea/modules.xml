@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/TimeTiper.iml" filepath="$PROJECT_DIR$/.idea/TimeTiper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TimeTipper.iml" filepath="$PROJECT_DIR$/.idea/TimeTipper.iml" />
     </modules>
   </component>
 </project>

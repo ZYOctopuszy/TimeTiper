@@ -1,19 +1,19 @@
-import threading
+import asyncio
 from datetime import datetime, timedelta
 from json import load, dump
 from os import path
-from os.path import split
-from pathlib import Path
+from os.path import split, basename
 from random import randint
 from time import sleep
 
 import keyboard
-from PySide6.QtCore import Signal, QEvent, QTime, Qt, QObject
-from PySide6.QtGui import QPixmap, QAction, QIcon, QShortcut, QKeySequence
-from PySide6.QtWidgets import QMenu, QSystemTrayIcon, QFileDialog
+from PySide6.QtCore import Signal, QTime, QObject, Slot
+from PySide6.QtGui import QPixmap, QAction, QShortcut, QKeySequence
+from PySide6.QtWidgets import QMenu, QSystemTrayIcon, QFileDialog, QListWidgetItem
 
-from UIs import settings, add_time, get_input
+from UIs import settings, add_time
 from WindowCloser import WindowCloser
+from basicUIpy import *
 from public_functions import *
 
 
@@ -27,17 +27,19 @@ class MainWindow(QWidget):
     state_changed_signal = Signal()
     hide_window_signal = Signal()
 
+    @logger.catch
     def __init__(self, app: QApplication):
         QApplication.processEvents()
         super().__init__()
         self.app = app
-        self.add_time = AddTime(0)
-        self.edit_time = AddTime(1)
-        self.add_time.hide()
-        self.edit_time.hide()
         # 初始化ui
         self.ui = settings.Ui_Form()
         self.ui.setupUi(self)
+        self.setWindowTitle("那刻夏")
+        set_window_size(self, app)
+        self.setWindowFlags(Qt.WindowType.FramelessWindowHint)
+        self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
+        self.setAttribute(Qt.WidgetAttribute.WA_PaintOnScreen)
         # 实例化关闭窗口类
         self.window_closer = WindowCloser()
         # 软件激活状态
@@ -84,7 +86,6 @@ class MainWindow(QWidget):
         self.forKillWindowTitle: list[str] = self.default_config["forKillWindowTitle"]
         # 随机等待时间
         self.random_time: list[int] = self.default_config["random_time"]
-        self.moment_list: list[str] = []
         # 配置文件路径
         self.clock_json_path: str = path.join(
             split(abspath(sys.argv[0]))[0], "clock.json"
@@ -100,6 +101,9 @@ class MainWindow(QWidget):
             )
         )
         QShortcut(QKeySequence("Ctrl+Q"), self).activated.connect(self.quit_app)
+        # region 初始化时间列表管理器
+        self.time_mannager = TimeManager(self)
+        # endregion
         # region 初始化热键管理器
         self.hot_key_manager = HotKeyManager(self)
         self.hot_key_manager.show_window_signal.connect(self.show_window)
@@ -148,24 +152,21 @@ class MainWindow(QWidget):
             self.ui.hold_seconds,
         ]
         connect_signals(normal_widgets, self.set_flushable)
-        self.ui.add_button.clicked.connect(self.add_button_action)
-        self.ui.delete_button.clicked.connect(self.delete_button_action)
-        self.ui.edit_button.clicked.connect(self.edit_button_item)
         self.ui.apply_button.clicked.connect(self.flash_state_changed)
         self.ui.is_active.clicked.connect(self.state_changed_signal.emit)
         self.ui.test_button.clicked.connect(self.testing)
         self.ui.exit_button.clicked.connect(self.quit_app)
-        self.ui.if_strong_hide.checkStateChanged.connect(self.strong_hide_action)
+        self.ui.if_strong_hide.stateChanged.connect(self.strong_hide_action)
+        self.ui.close_button.clicked.connect(self.close)
+        self.ui.minimize_button.clicked.connect(self.showMinimized)
         # endregion
         # region 时间点编辑功能实现
         # 检测时间列表选中项改变和描述内容改变
-        self.ui.time_list.itemSelectionChanged.connect(self.flash_description)
-        self.ui.description.textChanged.connect(self.edit_description)
-        self.moment_list = sorted(self.time_config.keys())
-        for item in self.moment_list:
-            QApplication.processEvents()
-            self.ui.time_list.addItem(item)
-            logger.debug(f"已添加时间点: -{item}-")
+        self.ui.time_list.itemSelectionChanged.connect(
+            self.time_mannager.flash_description
+        )
+        self.ui.description.textChanged.connect(self.time_mannager.edit_description)
+        self.ui.time_list.addItems([item for item in sorted(self.time_config.keys())])
         # endregion
 
         # region 初始化托盘图标
@@ -185,59 +186,62 @@ class MainWindow(QWidget):
 
         # region 初始化消息提示类
         self.warner = MessageShower(self, self.tray_icon)
-        QApplication.processEvents()
-        self.thread = threading.Thread(target=self.warner.warn)
         # endregion
 
         # 初始化待杀程序列表
         self.ui.for_kill_list.addItems(self.forKillExe)
         self.ui.for_close_title.addItems(self.forKillWindowTitle)
         logger.debug("已加载待杀程序列表")
+        self.warner.run()
 
     # region 主窗口类方法s
-    def strong_hide_action(self):
+    @logger.catch
+    def strong_hide_action(self, state):
         """
         关联强隐藏托盘图标
         :return:
         """
-        self.ui.if_tray_hide.setDisabled(self.ui.if_strong_hide.isChecked())
+        self.ui.if_tray_hide.setDisabled(state)
         self.ui.if_tray_hide.setChecked(True)
 
+    @logger.catch
     def testing(self):
         self.test = True
 
-    def set_flushable(self):
+    @logger.catch
+    def set_flushable(self, *args, **kwargs):
         """
         设置应用按钮为可点击状态
         :return:
         """
         self.ui.apply_button.setEnabled(True)
 
+    @logger.catch
     def changeEvent(self, event):
         """
         处理窗口最小化行为
         :param event: 事件对象
         :return: 无
         """
-        if event.type() == QEvent.Type.WindowStateChange and (
-                self.windowState() == Qt.WindowState.WindowMinimized
-        ):
+        if self.windowState() == Qt.WindowState.WindowMinimized:
             logger.debug("设置窗口最小化, 执行隐藏窗口")
             self.showNormal()
-            self.hide()
+            self.setVisible(False)
             self.hide_window_signal.emit()
-        super().changeEvent(event)
+        else:
+            super().changeEvent(event)
 
+    @logger.catch
     def closeEvent(self, event):
         """
         窗口收到关闭事件时隐藏设置窗口
         :param event: 事件对象
         :return: 无
         """
-        self.showMinimized()
-        self.hide()
+        self.setVisible(False)
         event.ignore()
 
+    @logger.catch
     def load_config(self, configure: dict):
         """
         加载配置
@@ -248,13 +252,14 @@ class MainWindow(QWidget):
         self.hide_tray = configure["hide_tray"] or self.default_config["hide_tray"]
         self.forKillExe = configure["forKillExe"] or self.default_config["forKillExe"]
         self.random_time = (
-                configure["random_time"] or self.default_config["random_time"]
+            configure["random_time"] or self.default_config["random_time"]
         )
         self.hold_time = configure["hold_time"] or self.default_config["hold_time"]
         self.forKillWindowTitle = (
-                configure["forKillWindowTitle"] or self.default_config["forKillWindowTitle"]
+            configure["forKillWindowTitle"] or self.default_config["forKillWindowTitle"]
         )
 
+    @logger.catch
     def show_config(self):
         """
         显示配置
@@ -262,13 +267,16 @@ class MainWindow(QWidget):
         """
         QApplication.processEvents()
         logger.debug(
-            f"""当前托盘图标透明(0显1透2隐): {self.hide_tray};
-            \r当前待杀程序: {self.forKillExe};
-            \r当前随机时间: {self.random_time};
-            \r当前持续时间: {self.hold_time};
-            \r当前待杀应用窗口标题: {self.forKillWindowTitle};"""
+            "当前托盘图标透明(0显1透2隐): {}", self.hide_tray, feature="f-strings"
+        )
+        logger.debug("当前待杀程序: {}", self.forKillExe, feature="f-strings")
+        logger.debug("当前随机时间: {}", self.random_time, feature="f-strings")
+        logger.debug("当前持续时间: {}", self.hold_time, feature="f-strings")
+        logger.debug(
+            "当前待杀应用窗口标题: {}", self.forKillWindowTitle, feature="f-strings"
         )
 
+    @logger.catch
     def flash_config(self, configure: dict) -> dict:
         """
         更新配置文件
@@ -284,16 +292,18 @@ class MainWindow(QWidget):
         configure["forKillWindowTitle"] = self.forKillWindowTitle
         return configure
 
+    @logger.catch
     def show_window(self):
         """
         显示窗口(获取焦点+活动+前置)
         :return:
         """
-        self.showNormal()
+        self.setVisible(True)
         self.raise_()
         self.activateWindow()
         self.setFocus()
 
+    @logger.catch
     def change_window_state(self, hide: bool = False):
         """
         显示或隐藏设置窗口
@@ -301,21 +311,23 @@ class MainWindow(QWidget):
         :return:
         """
         if hide:
-            self.showMinimized()
-            self.hide()
+            self.setVisible(False)
         else:
             self.show_window()
 
+    @logger.catch
     def quit_app(self):
         """
         退出软件
         :return: 无
         """
         self.life = False
-        logger.debug(f"当前软件生命状态: {self.life}")
         keyboard.unhook_all()
+        logger.debug(f"当前软件生命状态: {self.life}")
         self.app.quit()
+        sys.exit()
 
+    @logger.catch
     def flash_state_changed(self):
         """
         监听复选框状态改变
@@ -347,122 +359,147 @@ class MainWindow(QWidget):
             self.random_time[0] = int(self.ui.a.text())
             self.random_time[1] = int(self.ui.b.text())
         with open("config.json") as file:
-            temp = self.flash_config(load(file))
-            logger.debug(temp)
+            config = self.flash_config(load(file))
         with open("config.json", "w") as file:
-            dump(temp, file, indent=4)
+            dump(config, file, indent=4)
         self.show_config()
         # 将应用按钮设置为禁用状态
         self.ui.apply_button.setDisabled(True)
         # 发送应用信号
         self.apply_signal.emit()
 
+    # endregion
+
+
+class TimeManager:
+    """
+    管理时间列表
+    """
+
+    def __init__(self, window: MainWindow):
+        self.window = window
+        self.add_time = AddTime(0)
+        self.edit_time = AddTime(1)
+        self.add_time.hide()
+        self.edit_time.hide()
+
+        self.window.ui.add_button.clicked.connect(
+            lambda: self.add_time.show() and self.add_time.ui.timeEdit.clear()
+        )
+        self.window.ui.edit_button.clicked.connect(self.edit_button_action)
+        self.window.ui.delete_button.clicked.connect(self.delete_button_action)
+
+        self.add_time.ui.sure.clicked.connect(self.add_button_action)
+        self.edit_time.ui.sure.clicked.connect(self.edit_time_function)
+
     # region 时间编辑功能函数
+    @logger.catch
     def add_button_action(self):
         """
         添加提醒时间
         :return: 无
         """
         QApplication.processEvents()
-
-        def sure_action():
-            """
-            确认添加时间点
-            :return: 无
-            """
-            QApplication.processEvents()
-            self.add_time.hide()
-            # 格式化时间字符串为"小时:分钟"格式
-            added_time = self.add_time.ui.timeEdit.time().toString("HH:mm")
-            self.moment_list.append(added_time)
-            self.moment_list.sort()
-            self.ui.time_list.clear()
-            self.ui.time_list.addItems(self.moment_list)
-            self.time_config[added_time] = "Default Description"
+        self.add_time.hide()
+        # 格式化时间字符串为"小时:分钟"格式
+        if (
+            added_time := self.add_time.ui.timeEdit.time().toString("HH:mm")
+        ) not in self.window.time_config.keys():
+            self.window.time_config[added_time] = "Default Description"
+            self.window.ui.time_list.clear()
+            self.window.ui.time_list.addItems(sorted(self.window.time_config.keys()))
             self.edit_description()
 
-        self.add_time.show()
-        self.add_time.ui.sure.clicked.connect(sure_action)
-
+    @logger.catch
     def delete_button_action(self):
         """
         删除当前选中项
         :return: 无
         """
         QApplication.processEvents()
-        if current_item := self.ui.time_list.currentItem():
-            self.ui.time_list.takeItem(self.ui.time_list.row(current_item))
-            del self.time_config[current_item.text()]
-            with open("clock.json", "w", encoding="utf-8") as file:
-                dump(self.time_config, file, ensure_ascii=False, indent=4)
+        if current_item := self.window.ui.time_list.currentItem():
+            self.window.ui.time_list.takeItem(
+                self.window.ui.time_list.row(current_item)
+            )
+            del self.window.time_config[current_item.text()]
+            self.flash_time_config()
         self.edit_description()
 
-    def edit_button_item(self):
+    @logger.catch
+    def edit_button_action(self):
         """
-        编辑当前选中项的时间点
+        显示时间编辑框
         :return:
         """
         QApplication.processEvents()
-        current_item = self.ui.time_list.currentItem()
-        if current_item:
+        current_item = self.window.ui.time_list.currentItem()
+        if type(current_item) is QListWidgetItem:
             self.edit_time.ui.timeEdit.setTime(
                 QTime.fromString(current_item.text(), "HH:mm")
             )
             self.edit_time.show()
 
-            def sure_action():
-                """
-                确认编辑时间点
-                :return: 无
-                """
-                before_time = current_item.text()
-                self.edit_time.hide()
-                edited_time = self.edit_time.ui.timeEdit.time().toString("HH:mm")
-                current_item.setText(edited_time)
-                self.time_config[edited_time] = self.time_config.pop(before_time, None)
-                self.edit_description()
-
-            self.edit_time.ui.sure.clicked.connect(sure_action)
+    @logger.catch
+    def edit_time_function(self, current_item: QTime):
+        """
+        编辑选中时间项
+        :param current_item: 选中时间
+        :return:
+        """
+        before_time: str = current_item.text()
+        self.edit_time.hide()
+        if (
+            edited_time := self.edit_time.ui.timeEdit.time().toString("HH:mm")
+            not in self.window.time_config.keys()
+        ):
+            current_item.setText(edited_time)
+            self.window.time_config[edited_time] = self.window.time_config.pop(
+                before_time, None
+            )
+            self.flash_time_config()
 
     # endregion
 
     # region 时间描述操作相关
-    def show_description(self):
-        """
-        展示时间及其对应描述
-        :return:
-        """
-        QApplication.processEvents()
-        for _i in range(self.ui.time_list.count()):
-            content = self.ui.time_list.item(_i).text()
-            description = self.time_config[content]
-            logger.debug(f"时间: {content}, 描述:{description}")
-
+    @logger.catch
     def flash_description(self):
         """
         刷新当前选中项的描述
         :return: 无
         """
         QApplication.processEvents()
-        if current_item := self.ui.time_list.currentItem():
-            current_row = self.ui.time_list.row(current_item)
+        if current_item := self.window.ui.time_list.currentItem():
+            current_row = self.window.ui.time_list.row(current_item)
             logger.debug(f"当前选中: {current_item.text()}, 序号: {current_row}")
-            self.ui.description.setText(self.time_config[current_item.text()])
+            self.window.ui.description.setText(
+                self.window.time_config[current_item.text()]
+            )
 
+    @logger.catch
     def edit_description(self):
         """
         编辑当前选中项的描述
         :return: 无
         """
         QApplication.processEvents()
-        current_item = self.ui.time_list.currentItem()
-        if current_item is not None:
-            self.time_config[current_item.text()] = self.ui.description.toPlainText()
-            with open("clock.json", "w", encoding="utf-8") as file:
-                logger.debug(f"已刷新时间表配置, 当前配置:{self.time_config}")
-                dump(self.time_config, file, ensure_ascii=False, indent=4)
 
-    # endregion
+        if current_item := self.window.ui.time_list.currentItem():
+            self.window.time_config[current_item.text()] = (
+                self.window.ui.description.toPlainText()
+            )
+            self.flash_time_config()
+
+    @logger.catch
+    def flash_time_config(self):
+        """
+        刷新时间表配置
+        :return:
+        """
+        self.window.time_config = dict(sorted(self.window.time_config.items()))
+        logger.debug(f"已刷新时间表配置, 当前配置:{self.window.time_config}")
+        with open("clock.json", "w", encoding="utf-8") as file:
+            dump(self.window.time_config, file, ensure_ascii=False, indent=4)
+
     # endregion
 
 
@@ -473,11 +510,13 @@ class HotKeyManager(QObject):
 
     show_window_signal = Signal()
 
+    @logger.catch
     def __init__(self, parent: MainWindow):
         super().__init__()
         self.window = parent
         keyboard.add_hotkey("ctrl+windows+alt+shift+f6", self.show_window)
 
+    @logger.catch
     def show_window(self):
         """
         显示设置窗口
@@ -492,6 +531,7 @@ class MyTray(QSystemTrayIcon):
     自定义系统托盘图标类
     """
 
+    @logger.catch
     def __init__(self, connect_window: MainWindow):
         QApplication.processEvents()
         super().__init__()
@@ -538,6 +578,7 @@ class MyTray(QSystemTrayIcon):
         # 连接系统托盘图标点击信号与槽函数
         self.activated.connect(self.toggle_window)
 
+    @logger.catch
     def set_picture_path(self):
         """
         设置系统托盘图标图片路径
@@ -548,15 +589,14 @@ class MyTray(QSystemTrayIcon):
         file_paths = list(map(resource_path, self.files))
 
         self.files.clear()
-        for i in range(len(file_paths)):
-            self.files.append(str(Path(file_paths[i])))
-            logger.debug(f"图片文件已加载: {self.files[i]}")
+        self.files = [abspath(file_paths[i]) for i in range(len(file_paths))]
         self.connect_window.setWindowIcon(QIcon(self.files[0]))
         self.pixmap = QPixmap(self.files[0])
         self.setIcon(QIcon(self.pixmap))
         self.connect_window.setWindowIcon(QIcon(self.files[0]))
         self.setToolTip("那刻夏")
 
+    @logger.catch
     def toggle_window(self, reason):
         """
         实现托盘各种点击操作
@@ -567,9 +607,9 @@ class MyTray(QSystemTrayIcon):
         QApplication.processEvents()
         if reason == QSystemTrayIcon.ActivationReason.DoubleClick:
             if not self.connect_window.isVisible() and (
-                    keyboard.is_pressed("shift")
-                    and keyboard.is_pressed("esc")
-                    or self.connect_window.hide_tray == 0
+                keyboard.is_pressed("shift")
+                and keyboard.is_pressed("esc")
+                or self.connect_window.hide_tray == 0
             ):
                 # 显示设置窗口
                 logger.debug("显示设置窗口")
@@ -586,6 +626,7 @@ class MyTray(QSystemTrayIcon):
         elif reason == QSystemTrayIcon.ActivationReason.MiddleClick:
             self.connect_window.quit_app()
 
+    @logger.catch
     def change_tray_state(self, jump: bool = False):
         """
         改变托盘图标状态
@@ -610,6 +651,7 @@ class MyTray(QSystemTrayIcon):
                 self.setIcon(QIcon(self.files[1]))
                 self.setToolTip("那刻夏\n(睡觉中)")
 
+    @logger.catch
     def show_hide_window(self, by_tray: bool = False):
         """
         改变托盘上下文菜单
@@ -629,20 +671,21 @@ class MyTray(QSystemTrayIcon):
             self.show_hide_action.setToolTip("交谈完毕")
             self.show_hide_action.setText("设完了")
 
+    @logger.catch
     def flash_tray(self):
         """
         刷新托盘图标状态
         :return:
         """
         if self.connect_window.hide_tray == 1:
-            self.show()
+            self.setVisible(True)
             self.pixmap.load(self.files[2])
             self.setToolTip("")
             self.setIcon(QIcon(self.pixmap))
         elif self.connect_window.hide_tray == 2:
-            self.hide()
+            self.setVisible(False)
         else:
-            self.show()
+            self.setVisible(True)
             self.change_tray_state(True)
 
 
@@ -651,11 +694,11 @@ class AddTime(QWidget):
     自定义添加时间点窗口类
     """
 
+    @logger.catch
     def __init__(self, use_to: int):
         super().__init__()
         self.ui = add_time.UiForm()
         self.ui.setupUi(self)
-        self.setWindowFlags(Qt.WindowType.Tool | Qt.WindowType.WindowTitleHint)
         (
             self.setWindowTitle("添加时间点")
             if use_to == 0
@@ -668,30 +711,33 @@ class MessageShower:
     自定义消息显示类
     """
 
+    @logger.catch
     def __init__(self, window: MainWindow, tray_icon: QSystemTrayIcon):
         self.window = window
         self.tray_icon = tray_icon
 
+    @logger.catch
     def run(self):
         """
         开始线程
         :return:
         """
-        self.warn()
+        asyncio.run(self.warn())
 
     # region 通知提醒功能实现
-    def warning_action(self):
+    @logger.catch
+    def warning_action(self) -> bool:
         """
         当下课时执行的操作(关闭相关软件!)
         :return:
         """
         now = datetime.now()
-        if now.strftime("%H:%M") in self.window.time_config.keys() or self.window.test:
-            wait_second = randint(
-                self.window.random_time[0], self.window.random_time[1]
-            )
-        else:
-            wait_second = 0
+        wait_second = (
+            randint(self.window.random_time[0], self.window.random_time[1])
+            if now.strftime("%H:%M") in self.window.time_config.keys()
+            or self.window.test
+            else 0
+        )
         logger.debug(f"将等待时间: {wait_second}秒")
         while self.window.life and self.window.state:
             if datetime.now() - (now + timedelta(seconds=wait_second)) <= timedelta():
@@ -709,132 +755,57 @@ class MessageShower:
         self.window.test = False
         self.window.ui.test_button.setEnabled(True)
         self.window.ui.test_button.setText("测试")
+        return True
 
-    def warn(self):
+    @logger.catch
+    async def warn(self) -> bool:
         """
         警告功能
         :return: 无
         """
         while True:
             if not self.window.life:
-                return
+                sleep(0.05)
+                sys.exit()
             elif self.window.state or self.window.test:
-                time_list = list(self.window.time_config.keys())
-                for class_over_time in time_list:
-                    QApplication.processEvents()
-                    now = datetime.now()
-                    QApplication.processEvents()
-                    difference = timedelta(
-                        hours=now.hour, minutes=now.minute, seconds=now.second
-                    ) - timedelta(
-                        hours=int(class_over_time[:2]), minutes=int(class_over_time[3:])
-                    )
-                    QApplication.processEvents()
-                    current_time: bool = False
-                    # 如果差大于0
-                    if timedelta() <= difference <= timedelta(
-                            seconds=self.window.hold_time
-                    ):
-                        # 如果差小于持续时间
-                        current_time = True
-                        logger.debug(
-                            f"hold_time: {timedelta(seconds=self.window.hold_time)};    difference: {difference};    so {current_time}"
+                QApplication.processEvents()
+                now = datetime.now()
+                now = timedelta(
+                    hours=now.hour,
+                    minutes=now.minute,
+                    seconds=now.second,
+                )
+                if self.window.test or (
+                    [
+                        class_over_time
+                        for class_over_time in self.window.time_config.keys()
+                        if timedelta()
+                        <= now
+                        - timedelta(
+                            hours=int(class_over_time[:2]),
+                            minutes=int(class_over_time[3:]),
                         )
-                    QApplication.processEvents()
-                    if current_time or self.window.test:
-                        self.window.ui.test_button.setDisabled(True)
-                        self.window.ui.test_button.setText("执行中, 请稍候...")
-                        logger.debug("执行清剿函数")
-                        self.warning_action()
+                        <= timedelta(seconds=self.window.hold_time)
+                    ]
+                ):
+                    # 如果差小于持续时间
+                    logger.debug(
+                        f"hold_time: {timedelta(seconds=self.window.hold_time)};    difference: {difference};    so {current_time}"
+                    )
+                    self.window.ui.test_button.setDisabled(True)
+                    self.window.ui.test_button.setText("执行中, 请稍候...")
+                    logger.debug("执行清剿函数")
+                    self.warning_action()
                     sleep(1)
-
-
-class GetInput(QWidget):
-    """
-    自定义获取输入窗口类
-    """
-
-    def __init__(self, parent: MainWindow, list_widget: QListWidget):
-        super().__init__()
-        self.ui = get_input.UiGetInput()
-        self.ui.setupUi(self)
-        self.window = parent
-        self.list_widget = list_widget
-        self.setWindowFlags(Qt.WindowType.WindowStaysOnTopHint)
-        self.setWindowIcon(QIcon(self.window.tray_icon.files[3]))
-        self.hide()
-
-
-class AddItem(GetInput):
-    def __init__(self, parent: MainWindow, list_widget):
-        super().__init__(parent, list_widget)
-
-    def remove_item(self):
-        """
-        删除选中项
-        :return:
-        """
-        QApplication.processEvents()
-        try:
-            for_remove_item = self.list_widget.currentItem()
-            self.list_widget.takeItem(self.list_widget.currentRow())
-            logger.debug(f"已删指定项: {for_remove_item.text()}")
-            self.window.flash_state_changed()
-        except Exception as error:
-            logger.warning(f"删除项失败{error}")
-
-    def add_item_func(self):
-        """
-        添加项到列表
-        :return:
-        """
-        QApplication.processEvents()
-        self.hide()
-        self.list_widget.addItem(self.ui.get_exe_name.text())
-        logger.debug(f"已手动添加项: {self.ui.get_exe_name.text()}")
-        self.window.flash_state_changed()
-
-    def add_item_function(self):
-        """
-        处理手动添加项
-        :return:
-        """
-        # 显示程序名称输入框
-        self.show()
-        self.ui.get_exe_name.clear()
-
-
-class EditItem(GetInput):
-    def __init__(self, parent, list_widget):
-        super().__init__(parent, list_widget)
-
-    def edit_item_function(self):
-        """
-        处理编辑项
-        :return:
-        """
-        QApplication.processEvents()
-        self.show()
-        self.ui.get_exe_name.setText(self.list_widget.currentItem().text())
-
-    def edit_item_func(self):
-        """
-        处理编辑项函数
-        :return:
-        """
-        QApplication.processEvents()
-        self.hide()
-        current_item = self.list_widget.currentItem()
-        self.list_widget.takeItem(self.list_widget.currentRow())
-        self.list_widget.addItem(self.ui.get_exe_name.text())
-        logger.debug(
-            f"已修改项: {current_item.text()} -> {self.ui.get_exe_name.text()}"
-        )
-        self.window.flash_state_changed()
 
 
 # region 待杀程序编辑功能实现
 class AddEXE(AddItem):
+    """
+    自定义添加待杀程序窗口类
+    """
+
+    @logger.catch
     def __init__(self, parent: MainWindow):
         super().__init__(parent, parent.ui.for_kill_list)
         self.window.ui.remove_exe.clicked.connect(self.remove_item)
@@ -845,19 +816,21 @@ class AddEXE(AddItem):
             self.item_double_clicked_action
         )
 
+    @logger.catch
     def add_exe_by_choose_file(self):
         """
         通过选择文件添加待杀程序
         :return: 无
         """
-        file_name = QFileDialog.getOpenFileName(
-            self.window, "选择待杀程序", "", "*.exe"
+        file_name = basename(
+            QFileDialog.getOpenFileName(self.window, "选择待杀程序", "", "*.exe")[0]
         )
-        if file_name[0].split("/")[-1].strip() != "":
-            self.window.ui.for_kill_list.addItem(file_name[0].split("/")[-1])
-            logger.debug(f"已添加待杀程序: {file_name[0]}")
+        if file_name.strip() != "":
+            self.window.ui.for_kill_list.addItem(file_name)
+            logger.debug(f"已添加待杀程序: {file_name}")
         self.window.flash_state_changed()
 
+    @logger.catch
     def item_double_clicked_action(self):
         """
         双击待杀程序列表项时执行
@@ -868,6 +841,11 @@ class AddEXE(AddItem):
 
 
 class EditEXE(EditItem):
+    """
+    自定义编辑待杀程序窗口类
+    """
+
+    @logger.catch
     def __init__(self, parent: MainWindow):
         super().__init__(parent, parent.ui.for_kill_list)
         self.setWindowTitle("修改待杀程序名")
@@ -880,6 +858,11 @@ class EditEXE(EditItem):
 
 # region 待杀窗口标题编辑功能实现
 class AddTitle(AddItem):
+    """
+    自定义添加待关闭窗口标题窗口类
+    """
+
+    @logger.catch
     def __init__(self, parent: MainWindow):
         super().__init__(parent, parent.ui.for_close_title)
         self.window.ui.remove_title.clicked.connect(self.remove_item)
@@ -888,6 +871,7 @@ class AddTitle(AddItem):
         self.setWindowTitle("添加待杀窗口标题")
         self.ui.get_exe_name.setPlaceholderText("请输入窗口标题")
 
+    @logger.catch
     def item_double_clicked_action(self):
         """
         双击待关闭窗口列表项时执行
@@ -900,10 +884,16 @@ class AddTitle(AddItem):
 
 
 class EditTitle(EditItem):
+    """
+    自定义编辑待关闭窗口标题窗口类
+    """
+
+    @logger.catch
     def __init__(self, parent: MainWindow):
         super().__init__(parent, parent.ui.for_close_title)
         self.setWindowTitle("修改待杀窗口标题")
         self.ui.get_exe_name.setPlaceholderText("请输入待杀窗口标题")
         self.window.ui.edit_title_button.clicked.connect(self.edit_item_function)
+
 
 # endregion
