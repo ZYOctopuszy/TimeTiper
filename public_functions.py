@@ -1,11 +1,17 @@
-import os.path
 from os import popen
-from os.path import join
-
+from pathlib import Path, PurePath
 from PySide6.QtCore import QRect
-from PySide6.QtWidgets import QApplication, QListWidget, QWidget, QCheckBox, QSpinBox
+from PySide6.QtWidgets import QApplication, QListWidget, QWidget, QCheckBox
 from loguru import logger
 
+__all__ = [
+    "resource_path",
+    "set_window_size",
+    "kill_exe",
+    "flash_list_widget",
+    "mapx",
+    "connect_signals",
+]
 
 @logger.catch
 def resource_path(relative_path: str) -> str:
@@ -16,7 +22,7 @@ def resource_path(relative_path: str) -> str:
     """
     QApplication.processEvents()
     # noinspection SpellCheckingInspection
-    return join(os.path.dirname(__file__), relative_path)
+    return PurePath.joinpath(Path(__file__).parent, relative_path).__str__()
 
 
 @logger.catch

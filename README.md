@@ -62,9 +62,9 @@
     "forKillExe": [
         "EasiCamera.exe",
         "et.exe",
-        "EXCEL.EXE",
-        "POWERPNT.EXE",
-        "WINWORD.EXE",
+        "EXCEL.Title",
+        "POWERPNT.Title",
+        "WINWORD.Title",
         "wps.exe",
         "wpscloudsvr.exe"
     ], //待杀程序列表
